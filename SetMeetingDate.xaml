@@ -1,0 +1,186 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SetMeetingDate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_StartInputDate" Type="InArgument(x:String)" />
+    <x:Property Name="IO_StartYear" Type="InOutArgument(x:String)" />
+    <x:Property Name="IO_StartMonth" Type="InOutArgument(x:String)" />
+    <x:Property Name="IO_StartDate" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>423.2,2326.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Schedule meeting" sap:VirtualizedContainerService.HintSize="433.6,2161.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" Version="V1">
+    <uix:NApplicationCard.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1870.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign MeetingYear" sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[IO_StartYear]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(In_StartInputDate,"MM/dd/yyyy",nothing).ToString("yyyy")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign MeetingMonth" sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[IO_StartMonth]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(In_StartInputDate,"MM/dd/yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("MMM")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign MeetingDate" sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[IO_StartDate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(In_StartInputDate,"MM/dd/yyyy",System.Globalization.CultureInfo.InvariantCulture).ToString("dd")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <uix:NClick ClickType="Single" DisplayName="Click 'DateDropDown'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="143, 211, 350, 30" FriendlyName="'Tue ,'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl role='pane' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl role='pane' automationid='' check:fulltext='Tue&amp;#xD;&amp;#xA;  &amp;#xD;&amp;#xA; &amp;#xD;&amp;#xA;,' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWIAAAAiCAYAAABlc9OiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVYSURBVHhe7Z3LchpHFIZ5Fy/tXXaTne0HSCrvwMJ7vwdb26skT+ANC2G7hBaoCsnITqSgQKpkWYUFJVlGhQy6oZO+DZye6RkYMQOG+r+qLjOX7nO60XzTatszOQIAALBQIGIAAFgwkSLudM5od/eAKpVdWlvbRkFBQUFJWEql91St1qleP6Ru98LYNUxIxIPBFdVqTVW51TqlXq9vjgAAAEhKt/udPn1q08bG39RoHNFwODRHxlgivry8onL5Ix0cHJs9AAAA0uDm5katMlSr+3R3d2f2aiwR12r/CXN3zBYAAIC0kSsOQc+ORNxun6nliKCpAQAApIdceVhf/0CDwbXZw0S8t3eoZAwAACBbpG+/fDk1W0zEm5t7dHFxabYAAABkxefPJ7S/f2S2mIjfvq1hWQIAAObAt2892t7+12wxEb9798F8AgAAkCXn532qViFiAABYGIlFXMznKJeLKPmiOWt+6Hw8KjTNjhBFymeaW5MKXo5Sab6Yt8bTc3TKGn+vIKLPSCCma5xiY05RX5PiOAGwYsw0I1YX6IKvLF8SLmlJmgWPPM9bChEX83lx2/DRNxDeruzLWIQ67mz9Em3kuVh1TD6W8TEn15dwkWf2NQCwxKyEiJVoc1xiPlocyyLiIPb4hsUsLEle7G8DybHFmzymXV+gZszyu3G0BcCSc3LylVot9/88vr6+odevp/uBz0DE8oILXKjq4rVFqS5YM0uKX1qIR4m4UHTLUEpASKEoY/GDKh8/tihcHCOxanFwwds5+/H88/Wf+lg6ctR9Mw05xlCPdcpyM2Omot4nJq9vARGD1aNUWqeHDz3a2toxezRSws+ePaenT3+j29tbszeahYg4etaUHF9WoTYF1jGWZ7OQZ/kZgY6O623P4+eYnHmOok/C//KDEfC4z2pcnDJKQHBMnILzbwJmMwWs7/QeMd0/ExKIGKwmr179QY8e/TySsXyGhJTwkye/Urt9ovZNYgEidhyfQSi+bEPtsphBEYewhGNEbCUYJxHH+c6Z5DToOOFZuiBGinau9yd0s0kYM1TfIm4MAVhuXr78U8l4c3NrJOHj4+mf0zN/EcuL25dNoMwmYvszl69LxFoaLH5AxNbpKucowTjOV/0N3mwSotpgwouR4n3GLYj6LoN9TBDTWd8CIgarzYsXv9ODBz/R48e/JJKwZEEijrtgk8HlO44jZTHOwRaxmXVywVjC+UFELOFxnTmkITedf/h7FEwVM6a+BUQMVp83b8pTL0dw5iNifkGnJSmDJWJfinkRj4nWEjG/KRjU8TgRx+Y8JxG7xtXRl6S4v0OfyTHj63MgYgCiyEDEwRmSvgD5zErVswQi6lj/HnV6bBELlLzsfWERM7mobZFPnIgFoZxFPf6Xddb5wRhTUaSCVUGPG++HyiGQp9X3EQ6Bupgiz9iYifoJEQMQRQYilvjyNfJSFywXr6k7OidKKJOR7dh1ZWw7lr00Ybb92FIyUt4TRCyxc/YFlJaIdTvj9t1jYuUQZTXHeDtR57H2WOFNR8acsr4GIgYgiplEDH5Q5I0FxgNgaYgUMR6DubzIGT88DMDyEPkYzErlHzwYHgAA5kDkg+Hl20XxqiQAAMge+aqkVuur2WIixstDAQAge/yXh/b74xWIkYgleJ0+AABky85OzOv0JdLU5fJHyBgAAFJGPhxILgFXq/uhlQdLxJLB4ErMjBtqmaLVOqVer2+OAAAASEq3+11Mbtu0sfEXNRpHNBwOzZExIRH7dDpnyt6Vyi6trW2joKCgoCQspdJ7Namt1w/p/PzC2DVMpIgBAADMB4gYAAAWCtH/8BNE/lOocA0AAAAASUVORK5CYII=" InformativeScreenshot="9145afdbc2f4ba66b3329c06f269f9bc.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <uix:Target DesignTimeRectangle="43, 207, 100, 38" ElementType="Text" FriendlyName="'Start'" FullSelectorArgument="&lt;ctrl name='Start:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start:' role='text' automationid='' check:text='Start:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAqCAYAAABfjB7GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGuSURBVHhe7ZqxboMwFEX7T/4b/4x/xT+SSCyJlAF1SNKlUsWWqVMGuvAKBrfGxgmiVXrT3COhiGC94R7eMxI8CYGGgsChIHAoCBwKAoeCwKEgcCgIHAoCpq4/KAiZsnylIFROp3fZ7V4oCJXDoXKSKAiU7fYg53NNQaisVqU0TUNBqKzXz+6XgkDJCiqMEqWCwxTDFXJLJgRVYnUqpLC2vTJQGFE6OF/Kb9X5x6SCKitaabGXUqOgmzHRQYWYdqTlJlp29Dmxwf+j4PuuNEVfWykjZqrOnJvjwZjcgyqrXWg6l9TEnV9ZEwQbj8n+XOtwTUtch4ISsg8JYUckouaMptGaQdCSOg9OXpCnC9GPIE8mWN95X0ckKBmbFHSV64I64tGTBDvsLeF/ozUUtJR5guIHhzhYJ9C0q75x3URBPyYV1IUdJdmPrkBAF2x4HneY37/mCLpUh0x1kH8UDo9xd/jA3bUh9dH+04kZdUdGUFyHghJmjjjyV1AQOHzdAM5mc+QLO2T2+ze+8kaGH43cAfzsChx+uHgHUBA4FAQOBYFDQeBQEDgUBA4FQSPyCRucBNKFeDl7AAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                    <uix:Target DesignTimeRectangle="503, 211, 163, 30" FriendlyName="''" FullSelectorArgument="&lt;ctrl name='Start time*Time Picker' role='pane' /&gt;&lt;ctrl role='pane' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start time*Time Picker' role='pane' /&gt;&lt;ctrl role='pane' automationid='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAiCAYAAAA6a8mHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALsSURBVHhe7dzLTxpBHAfw/V886q237U39A9r0f+Dgvf8HV/XU9i/wwkHUgAdIgIJtoVBogo+sQPABgSLy+nVnGWF5DLvE2YfJ92MmcQaduXyzM8vujEIAPoVwgm8Jw1mrPVA2W6ZYLEvHxykUFGklHP5OiUSe8vkrajTaPHGLFsL59PRM6XTJ+GdNu6NWq8M/AZCn0fhHl5dVOj//RcXiDQ2HQ/7J1Ew4u91nikZ/ULlc4S0Azur3+8YMnUgUaDQa8daxmXCm03/1NNd4DcA9bLaez94knNXqgzGVz6cXwA1s1o5ELvRlZY+3mMKZy10ZAQXwCsvg7e0dr5nCGY/nqN3u8hqA+66v61Qo3PCaKZynp2lM6eCpx8cWpVJ/eM0UzrOzC/4bgDeazY5+34Nwgg9JDGeJgqpCgRCvmoQCCikKL2pQ/8v1WfUhYwzwFynhNAdjPpyloGoKyzjAyrIEr2DVh4wxwH9eH85QQA9lgEL6T2AhnEvaSkFSFZWCti9tVn3IGANkqtfvSdOWP1Xs9fp0dGTvwiFxWheFhAXXbFmIdaJAWfWxzhjginA4QpubKiWTGd4yxoK5t/eZdnc/0WAw4K1izoaTXVUX1n+CtakonFZ9rDMGuObw8Cttbb2fBJQ9M2fB3Nn5SNVq3Wiz4lk4VbtzrlUfMsYARxwcfDMCGo8nJ8GsVOy/q+GfK6eIVR8yxgDH7O9/oY2Nd7S9/WGtYDLOh/O160GrPmSMAY46OYnansrNnA2n0Ta3jlx6A7OKVR8yxgA/cjiceiv7DnQy7a5YC4puiHRWfdgeA94Ux8PJzDy9Ec21K8LJWPVhawx4UySGE0AuYTjxyhx4TfjKXCz2Gy8bg6eELxuzHXDYpgFeYts0NO2e10zhxAY38NLLBrdOZzp7T8LJYGsweCWTWbE1mHk5VAEBBbfYPlSBGR9HUzSmeBxHA06ZHkfz095xNGY4yAvFqWI+yKvZXOMgLwC/QDjBp4j+AyK9+Ng9kND+AAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Click 'Month Year'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="25, 25, 232, 25" ElementType="Button" FriendlyName="'March 2021'" FullSelectorArgument="&lt;ctrl name='March 2021 Select a Month' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl role='push button' automationid='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOwAAAAdCAYAAACpHYCoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJdSURBVHhe7ZntbYQwDED7h91YiG3YhVXYJA0JEDtnvhpUnaX3JKRCYpM7+cXR9ScAgBsQFsARCAvgCIQFcATCAjgCYQEcgbAAjkBYAEcgLIAjEBbAEQjbyDR0oev6MM7rA4M7c9qYw9h3oX/6gnkMfbesbb2GaR0ozGNfxvsxvklwIz6T13c4DLdB2EayjCfFuhf1twm7xAyhrDrnkJ8jySokTZ91H7+OX5DCI2w7CNvIUsT9MEQpZfEWctH3cfwLO2zNNAhBpzDUkqXN5+RzqPjIcp++l7w+hG0HYRtJwo7TgTBL0ccCn4xCPz1ObgLmvLI7qyNqvHJYEXbv+PF6LLAULq2v3oQuxKuF3UHYt0DYRrKwsUStYt2eGZ1pHgdxX3ezXOD1MTrLKiSKeaPTyx/rfJEjdbdqk7hAHXlN+crGYKHiFQj7FgjbyC7sgXTp/uooGSl5FlYBVYWv3drMYc0/l6vmYzN4KOxHvEJ8F9AEwjYiRUtFu1WlPFIeCJs60np81UdYQ4zUMc+F0CLdFzavo8r9QFgzXoGwb4GwjejOWLqgev4hbO7GsiPqPP8lbJ5jHmPlhrNTi3cSr6jj4K8gbCNatO1+1MfXWlhDvkthD7p0xphvPtMs7zyWzTiCVxKfx0sQ9i0QtpFa2FzUVSHXspkCXwgbSYJI0WMe+aPTI2HrNRik94ljsRL0RnwBYd8CYRv5ENYqTqO41b9n4mSd51i2LO12bTn/KqzMVS65dvU+OXAzPoOwb4GwAI5AWABHICyAIxAWwBEIC+AIhAVwBMICOAJhAdwQwi8y2DS69C4XBgAAAABJRU5ErkJggg==" InformativeScreenshot="ea1d2c9f8ca8eeb094c291e136a53121.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='WCN_ModelessWnd' idx='*' /&gt;" SearchSteps="FuzzySelector, Image">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="263, 25, 25, 25" ElementType="Button" FriendlyName="'Previous Month'" FullSelectorArgument="&lt;ctrl name='Previous Month' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Previous Month' role='push button' automationid='' check:text='Previous Month' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACnSURBVEhL7dQxCsMgFMbx3tzRQ3gIRweP4AEcHDyAg4OjwysvaAnFWkr9Ugr+QUiy/MhTvNEP2ii0jUL7fzTG2J7mLUFLKaSUIq11+zLvazSEQFJKEkLg0VorGWMOrC8omnM+xnkGoaj3/jFOODoa5/NajqaUhiM9L8h43/0t9CC92lcoyo1OMBzleNzW2mvRXr+VLkU5vn+dc+1t3jL0kzYKbaPAiO4on7vV5GjAAgAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Click 'Year'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="25, 25, 232, 25" ElementType="Button" FriendlyName="'2021 Select a Month'" FullSelectorArgument="&lt;ctrl name='2021 Select a Month' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl role='push button' automationid='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOwAAAAdCAYAAACpHYCoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFQSURBVHhe7dnBsYMgFEbhbOiNhuiGXmzFTu4TMPHC02h2/DPnm3ERmbs8A5iXAZBBsIAQggWEECwghGABIQQLCCFYQAjBAkIIFhBCsIAQgp3Zmi2GYOH9pGVfOKw5Husx27q/rx7MN6vlGOxyGdMg2GmViJIdDbWofHQ1Vhfpkvz6/XzhgyfY+RGskiW5QBdLY2R1R42Wu23W6eY35XcoUbPDqiBYJT64GqffQYub8MZgPwhWBcEK6Y68p/G18OLFFtsfmT2CVUGwItpd0+2oPwb7b75DsCoIVkDdGcfYfgj2dL5DsCoIdmotpNNj7KM77Jf5DsGqINiJXd85i/KVePgiPET8fd4jWBUEO6u7v2g2NUh3LO4CfTB/IFgVBDurGtwW4Mnjw2r30/3xCw/nG4JVQbCAEIIFhBAsIIRgASEECwghWEAIwQJCCBaQYfYHxMOUH4szXIMAAAAASUVORK5CYII=" InformativeScreenshot="b4caabecbc09592421290f11270a4e82.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='WCN_ModelessWnd' idx='*' /&gt;" SearchSteps="FuzzySelector, Image">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="263, 25, 25, 25" ElementType="Button" FriendlyName="'Previous Year'" FullSelectorArgument="&lt;ctrl name='Previous Year' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Previous Year' role='push button' automationid='' check:text='Previous Year' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACnSURBVEhL7dQxCsMgFMbx3tzRQ3gIRweP4AEcHDyAg4OjwysvaAnFWkr9Ugr+QUiy/MhTvNEP2ii0jUL7fzTG2J7mLUFLKaSUIq11+zLvazSEQFJKEkLg0VorGWMOrC8omnM+xnkGoaj3/jFOODoa5/NajqaUhiM9L8h43/0t9CC92lcoyo1OMBzleNzW2mvRXr+VLkU5vn+dc+1t3jL0kzYKbaPAiO4on7vV5GjAAgAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Choose provided 'Year'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="194, 62, 63, 55" FriendlyName="'2021'" FullSelectorArgument="[String.Format(&quot;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, IO_StartYear)]" FuzzySelectorArgument="[&quot;&lt;ctrl name=&quot; + IO_StartYear + &quot; role='list item' automationid='' check:text='*' /&gt;&quot;]" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAA7CAYAAAAguzffAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF0SURBVGhD7ZUxcsIwEEVzjRyLU+QO9JwDrkHJFejooHNLR+WNJRH7SWywmKGwkv9mfmHLO6N91tofJkYkA0gGkAwgGcCV8fl1/PPxkAwgGUAygGQAyQCSASQDSAaQDCAZQDKAZADJAJIBJANIBpAMIBlAMsD7ZGw6O/dm/U+Ol4dnVvvbtN51tuJ6RX3Kybad2WHnrdXH400ywgavts6u84aiCAhYD/uZ1ufrQyhzwTKc7K5o/mKHsoF4Em623eAek9Xfr/sgbPEnwwmbiY3zzYfMNFXKGNOgjGwM3MZSU+f9Cfem5GPENCYjzTZOwosyHuqzNCQjvtGykRdkuPVZmpCRNuke7apvxpP6LA3I+H3GQ8LfpPhzFIKe1zNLlzH3mxwSm8WoZM1X1E9pQsbQnBNuOn0P7uEpqKxPaWBMWouHZADJAJIBJANIBpAMIBlAMoBkAMkAkgEkA0gGkAwgGUAygGQAV8Z/RTKAZADJAJIxYvYN0l33ytXIKRUAAAAASUVORK5CYII=" InformativeScreenshot="e261751c6fa5a54056fba178080fd4a6.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='WCN_ModelessWnd' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Choose provided 'Month'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="116, 62, 63, 55" FriendlyName="'Feb'" FullSelectorArgument="[String.Format(&quot;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, IO_StartMonth)]" FuzzySelectorArgument="[&quot;&lt;ctrl name=&quot; + IO_StartMonth + &quot; role='list item' automationid='' check:text='*' /&gt;&quot;]" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAA7CAYAAAAguzffAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEwSURBVGhD7dXbbcIwGEDhvmQ3L+RtvEtWySZurvjYUlJUYaKWc6Q8QAzS/8WYr2yPxEBiIDGQGEgMJAYSA4mBxEBiIDGQGEgMJAYSA4mBxEBiIDGQGEgMJAYSA4mBumKMccjD0Fxx3O9eNeUUhhzStL9+T/0xnhq+TQz0gRj1zyjmsrJgVGtCmu/06zaM9t6UAobdMBaAsmR/71c77bnefoCus0wph2onLI05DiFvv4yTwcc4f0f7udd1z85Yh6qRjmtbfnJmrIgH2Ou7EePqCV9h/Led8eMTPsFYEDseovceoNVgM0BsD1CCLWdK37/b2zDKwOUqS4+dMVZrekIsdcX4a4mBxEBiIDGQGEgMJAYSA4mBxEBiIDGQGEgMJAYSA4mBxEBiIDGQGEiMRzl/A1BatyQLprABAAAAAElFTkSuQmCC" InformativeScreenshot="ed0a45114c02fef767fc0dd3a0e435b3.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='WCN_ModelessWnd' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NClick ClickType="Single" DisplayName="Click Provided 'Date'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="235, 217, 16, 18" FriendlyName="'Day 30'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Day *' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Day *' role='spin box' automationid='' check:text='Day 30' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADASURBVDhP7ZPREYQgDERTVwqiHqqhGYpZIaAkQbk5vftzZ5wRIS9sEgk/1gt8rj8DUwARHQ/H3DeGUhj7xBH+hAGmEJD6e1khlKAwPiBHVpCMyAWqDxQtLcttjoA5QckAJoY28hF42JZg7aBqTnINlHoqQF1PNWu2F8CW8bTgC6Bu3vUNxaI6fO+GTtq2L4HomxpWGUgNth09a5QCJkRzumXX9ZExcnPoh18B+6DuTXGwXeZPMUPZtLZ8Qy/wqYAN5f5Djg6faH0AAAAASUVORK5CYII=" InformativeScreenshot="828039d70a8ad1330810194bbccc13e5.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <uix:Target DesignTimeRectangle="184, 217, 41, 18" FriendlyName="'Month March'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Month *' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Month *' role='spin box' automationid='' check:text='Month March' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAWCAYAAABUpxX0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE4SURBVFhH7ZOBrcQgCIaZi4Gcx2lcxmE4BDnR0mvy7sVck/5JU62Inz8U6IZ6oHfpgd6l+0OXBASAlGv/cFChBByTSp//typlBLpKH0AD4Ql1zUiI+HvQAgWJPV2lCX8TOpd4Y0kEmKmw2xN0zYStZezhmFEng+ht5cxoVXvv4UdTWry+de3YrgF01YTT4cuag645uaT9sPe6zhF9jAG7avLF2as26LADVFp2YQmhecTOuBuKm3rICn1Qr4hu7dCeWHKftUAQ7842nUDPYw8aQatzVk7vjEJM4e1S4T/TFMQL9Nwip9Djhi3R2DRD91715Quc3gdtCZKHWKCD0sn6J+gAYuhraJa4Mn87QruEMr9oD1Y759OP+B20lD9w0mWVue/lq/boUnB7DOoP0HfRA71LD/QeEb0A1mcBNFV3oRoAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                    <uix:Target DesignTimeRectangle="264, 217, 32, 18" FriendlyName="'Year 2021'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Year *' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Year *' role='spin box' automationid='' check:text='Year 2021' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAWCAYAAACosj4+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADwSURBVEhL7ZNBFoAgCEQ9lwfyPJ7Gy3gYErQEMqVWLfzvudFmmBAd/IwdaMUOtOLngVIA51xfIbWDTgrs3EfIbZ8w6CsZoncwOmaBykeBF0gQiqmPfSdHz0JU0150rUf4Dy0C3ZEBagFhkiN450HVvJD6AnUwFKeBV2M+Q2hwGlJxNOM8GxNcL/gYiNp7qobmz7OACL3gQyBqN+/IJJCeE+SmF7wMVAdPmb3o0FAvMAfSL4eBgZYzNNELjIGe7xxBE/Wi1KDP9RxLoMUTRqjgdW1qfgz6jjlQKThYXFjnoy1+YNRXjFf2B3agFTvQHIADY9FGhnniyoUAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NClick.Target>
+          </uix:NClick>
+          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Provided 'Date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[IO_StartDate]">
+            <uix:NTypeInto.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="235, 217, 16, 18" FriendlyName="'Day 30'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Day *' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Day *' role='spin box' automationid='' check:text='Day 30' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADjSURBVDhP5ZIxDsMgDEV7DW6Um2TmCrkEU84RKZdA6hgpQ6YoW7aMbjCYGNKg0tKh6pc8gPEzH3yDwvoeUNT3j4L098B2dSursRtOhVK7pNG8QOX2SQFQ6hWkOyDqCfp9v28PWNVtDDKAmvcDesIcKWkZb+MKnjUQzQIjbKCaDKC3jcXcgYmjCekaiO/JAGbN3syGtZ0A2o6ouDgBNC5I1zdEi8zyezeMgtuOnwAj5w1NBBBTbH/U59lHkRhwAhUMsu3OhxvHKJpDypMY0A0qE4cFUJKf0VctZwTph4ClVBgI8ADo0VPTpBOI9gAAAABJRU5ErkJggg==" InformativeScreenshot="9caa63eaefddc27e1ee528e5a337292e.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <uix:Target DesignTimeRectangle="184, 217, 41, 18" FriendlyName="'Month March'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Month *' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Month *' role='spin box' automationid='' check:text='Month March' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAWCAYAAABUpxX0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE4SURBVFhH7ZOBrcQgCIaZi4Gcx2lcxmE4BDnR0mvy7sVck/5JU62Inz8U6IZ6oHfpgd6l+0OXBASAlGv/cFChBByTSp//typlBLpKH0AD4Ql1zUiI+HvQAgWJPV2lCX8TOpd4Y0kEmKmw2xN0zYStZezhmFEng+ht5cxoVXvv4UdTWry+de3YrgF01YTT4cuag645uaT9sPe6zhF9jAG7avLF2as26LADVFp2YQmhecTOuBuKm3rICn1Qr4hu7dCeWHKftUAQ7842nUDPYw8aQatzVk7vjEJM4e1S4T/TFMQL9Nwip9Djhi3R2DRD91715Quc3gdtCZKHWKCD0sn6J+gAYuhraJa4Mn87QruEMr9oD1Y759OP+B20lD9w0mWVue/lq/boUnB7DOoP0HfRA71LD/QeEb0A1mcBNFV3oRoAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                    <uix:Target DesignTimeRectangle="264, 217, 32, 18" FriendlyName="'Year 2021'" FullSelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Year *' role='spin box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Start day*Date Picker' role='pane' /&gt;&lt;ctrl name='Year *' role='spin box' automationid='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAWCAYAAACosj4+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADwSURBVEhL7ZNBFoAgCEQ9lwfyPJ7Gy3gYErQEMqVWLfzvudFmmBAd/IwdaMUOtOLngVIA51xfIbWDTgrs3EfIbZ8w6CsZoncwOmaBykeBF0gQiqmPfSdHz0JU0150rUf4Dy0C3ZEBagFhkiN450HVvJD6AnUwFKeBV2M+Q2hwGlJxNOM8GxNcL/gYiNp7qobmz7OACL3gQyBqN+/IJJCeE+SmF7wMVAdPmb3o0FAvMAfSL4eBgZYzNNELjIGe7xxBE/Wi1KDP9RxLoMUTRqjgdW1qfgz6jjlQKThYXFjnoy1+YNRXjFf2B3agFTvQHIADY9FGhnniyoUAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NTypeInto.Target>
+          </uix:NTypeInto>
+        </Sequence>
+      </ActivityAction>
+    </uix:NApplicationCard.Body>
+    <uix:NApplicationCard.TargetApp>
+      <uix:TargetApp Area="596, 75, 729, 881" FilePath="C:\Users\bhall\AppData\Roaming\Zoom\bin\zoom.exe" IconBase64="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" InformativeScreenshot="56cda12330703219d1778af491ebe9a1.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting'/&gt;" />
+    </uix:NApplicationCard.TargetApp>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </uix:NApplicationCard>
+</Activity>

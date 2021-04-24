@@ -1,0 +1,106 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="EnterMeetingTitle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_MeetingTitle" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>824,771.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="475.2,706.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Schedule meeting" sap:VirtualizedContainerService.HintSize="433.6,613.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,322.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="MeetingTitle" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Topic' - Meeting Title" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[In_MeetingTitle]">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="43, 148, 633, 40" ElementType="InputBox" FriendlyName="'Harshita Bhalla's'" FullSelectorArgument="&lt;ctrl name='Topic Harshita Bhalla&amp;apos;s Zoom Meeting' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Topic Harshita Bhalla&amp;apos;s Zoom Meeting' role='editable text' automationid='' /&gt;" ImageBase64="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" InformativeScreenshot="eb26d9805ce157257969cea37c4f7df8.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="43, 120, 41, 23" ElementType="Text" FriendlyName="'Topic'" FullSelectorArgument="&lt;ctrl name='Topic' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Topic' role='text' automationid='' check:text='Topic' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAbCAYAAADoOQYqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEZSURBVFhH7ZXLEYMgEIbTi3RgI5wtxKuFcLERDzbijJVsgvL41WUSiJLH8M3sheD+H7hJbvSDFOlcFOlcFOlcFOlYJtVQVdUk2tGsvIaTVrJeGoRKiI4Gs/ccZpcZ2/uD0ifcNDK0RlT2NJm1byJeeujc7duSajYfakZqhV+3t6lr/7aCOVNP0vSw1cKDUdJ2nSv/ikFaemG3D3pyOXhIrDRpOD3OoJtL0ZBaNntpvFmUsQLHHHh2l62SpM1YeDkDHGaV2Y6H47CPyQll7PhzaQhNGQ/XE4QOOZixy04bjwd2nSvui8gVHpjLCWXYt6OJkl5gfvKw4XY8xs2fFgprgjlPMljp9wjM9IkU6ZUizXKB9PUU6TwQ3QFuGvEcDVvzEwAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="596, 75, 729, 881" FilePath="C:\Users\bhall\AppData\Roaming\Zoom\bin\zoom.exe" IconBase64="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" InformativeScreenshot="d9a1e4b8bf723651ac76654607a16206.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

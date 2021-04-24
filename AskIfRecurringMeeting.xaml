@@ -1,0 +1,98 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AskIfRecurringMeeting" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_RecurringChoice" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>816,898.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Schedule meeting" sap:VirtualizedContainerService.HintSize="558.4,733.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" Version="V1">
+    <uix:NApplicationCard.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524.8,442.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If Condition="[In_RecurringChoice.Equals(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="483.2,348" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Recurring meeting'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NCheck_1">
+                <uix:NCheck.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="43, 298, 156, 30" ElementType="CheckBox" FriendlyName="'Recurring meeting'" FullSelectorArgument="&lt;ctrl name='Recurring meeting' role='check box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Recurring meeting' role='check box' automationid='' check:fulltext='Recurring meeting' /&gt;" InformativeScreenshot="d23369277944cbc41122b4c6fa60c2e0.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                </uix:NCheck.Target>
+              </uix:NCheck>
+            </If.Then>
+          </If>
+        </Sequence>
+      </ActivityAction>
+    </uix:NApplicationCard.Body>
+    <uix:NApplicationCard.TargetApp>
+      <uix:TargetApp Area="596, 75, 729, 881" FilePath="C:\Users\bhall\AppData\Roaming\Zoom\bin\zoom.exe" IconBase64="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" InformativeScreenshot="2507fcb1473e35de03eeae79b905203c.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting'/&gt;" />
+    </uix:NApplicationCard.TargetApp>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </uix:NApplicationCard>
+</Activity>

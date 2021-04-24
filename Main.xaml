@@ -1,0 +1,357 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="824,6736.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="43">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This bot helps you to schedule a zoom meeting on the go by providing the necessary  details.&#xA;Note:- This bot requires you to make a login on app before running it." DisplayName="ZoomMeetingSchedule" sap:VirtualizedContainerService.HintSize="724.8,6672" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="MeetingTitle" />
+      <Variable x:TypeArguments="x:String" Name="StartYear" />
+      <Variable x:TypeArguments="x:String" Name="StartInputDate" />
+      <Variable x:TypeArguments="x:String" Name="StartDate" />
+      <Variable x:TypeArguments="x:String" Name="StartMonth" />
+      <Variable x:TypeArguments="x:String" Name="StartMinute" />
+      <Variable x:TypeArguments="x:String" Name="StartHour" />
+      <Variable x:TypeArguments="x:String" Name="StartTime" />
+      <Variable x:TypeArguments="x:String" Name="GetText" />
+      <Variable x:TypeArguments="x:String" Name="DurationHours" />
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="HoursChildren" />
+      <Variable x:TypeArguments="x:String" Name="RecurringChoice" />
+      <Variable x:TypeArguments="x:String" Name="DurationMinutes" />
+      <Variable x:TypeArguments="x:Boolean" Name="MeetingID" />
+      <Variable x:TypeArguments="x:String" Name="InputMeetingID" />
+      <Variable x:TypeArguments="x:String" Name="HostVideo" />
+      <Variable x:TypeArguments="x:Boolean" Name="HostVideoBool" />
+      <Variable x:TypeArguments="x:String" Name="ParticipantsVideo" />
+      <Variable x:TypeArguments="x:Boolean" Name="ParticipantsVideoBool" />
+      <Variable x:TypeArguments="s:DateTime" Name="ReadStartDate" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Zoom" sap:VirtualizedContainerService.HintSize="683.2,6535.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="649.6,6244" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,4719.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Schedule'" sap:VirtualizedContainerService.HintSize="566.4,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="525, 568, 150, 133" ElementType="Button" FriendlyName="'Schedule'" FullSelectorArgument="&lt;ctrl name='Schedule' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Schedule' role='push button' automationid='' check:text='Schedule' /&gt;" ImageBase64="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" InformativeScreenshot="30fbb9a9828ba21bd3befc5c81200eb8.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPPTMainFrmWndClassEx' title='Zoom' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Asks for the title to be kept for the meeting that is being scheduled." DisplayName="Input Dialog - Ask for Title" sap:VirtualizedContainerService.HintSize="566.4,285.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Meeting Title" Title="Please enter the topic/title of your meeting(Default one will be cnsidered if nothing is provided here)">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[MeetingTitle]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterMeetingTitle workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="EnterMeetingTitle.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_MeetingTitle">[MeetingTitle]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:RetryScope sap2010:Annotation.AnnotationText="Asks the user to enter the correct date again(3 times max) if he/she enters a past date by mistake." DisplayName="Retry Scope - Meeting Date" sap:VirtualizedContainerService.HintSize="566.4,1084" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="524.8,876.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Asks user for providing the date of the meeting in specific format(MM/dd/yyyy).&#xA;Here, we can ask the date  from user in standard format(dd/MM/yyyy) as well but then we might need to first read that date using ParseExact in order to continue further." DisplayName="Input Dialog - Meeting Date" sap:VirtualizedContainerService.HintSize="483.2,349.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Meeting Date(MM/dd/yyyy)" Title="Please enter the date for the meeting(MM/dd/yyyy)">
+                        <ui:InputDialog.Result>
+                          <OutArgument x:TypeArguments="x:String">[StartInputDate]</OutArgument>
+                        </ui:InputDialog.Result>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InputDialog>
+                      <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:DateTime">[ReadStartDate]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(StartInputDate,"MM/dd/yyyy",nothing)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <If Condition="[ReadStartDate &lt; DateTime.Now]" sap:VirtualizedContainerService.HintSize="483.2,294.4" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Throw Exception="[new Exception(&quot;The date/time has to be a future one to set up a meeting&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                </ui:RetryScope.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RetryScope>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SetMeetingDate workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SetMeetingDate.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_StartInputDate">[StartInputDate]</InArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="IO_StartYear" />
+                  <InOutArgument x:TypeArguments="x:String" x:Key="IO_StartMonth" />
+                  <InOutArgument x:TypeArguments="x:String" x:Key="IO_StartDate" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Asks user to provide starting time of the meeting in 24hr format." DisplayName="Input Dialog - MeeingStartTime" sap:VirtualizedContainerService.HintSize="566.4,285.6" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Start Time of Meeting(hh:mm)" Title="Please enter the start time of meeting(hh:mm), 24hr format.">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[StartTime]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SetStartTime workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SetStartTime.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_StartTime">[StartTime]</InArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="IO_StartMinute" />
+                  <InOutArgument x:TypeArguments="x:String" x:Key="IO_StartHour" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="User should enter the hours in single digit for hours &lt; 10 here and double digit for &gt;=10 hrs" DisplayName="Input Dialog - DurationHours" sap:VirtualizedContainerService.HintSize="566.4,285.6" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Duration hours(h for &lt;10 and hh for others)" Title="Please enter the duration hours(hh)">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[DurationHours]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SetDurationHour workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SetDurationHour.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="GetText">[GetText]</InOutArgument>
+                  <InOutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)" x:Key="HoursChildren">[HoursChildren]</InOutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="IN_DurationHours">[DurationHours]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Asks user to provide minutes for which the meeting will last.&#xA;FYI: User is not allowed to have a meeting more than 40m until it's a premium account." DisplayName="Input Dialog - DurationMinutes" sap:VirtualizedContainerService.HintSize="566.4,371.2" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="Duration minutes(mm)" OptionsString="0;15;30;45" Title="Please enter the duration minutes(mm), if you don't have a premium account the you are not allowed for a meetng &gt; 40m">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[DurationMinutes]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SetDurationMinutes workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SetDurationMinutes.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_DurationMinutes">[DurationMinutes]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Checks the checkbox for user according to requirement.&#xA;Only checkbox marking is done here. Meeting recurrence can be handled via your calendar for customizing days or dates.&#xA;FYI: Recurring Meeting option isnever checed by default, if required we can keep an additonal veriication step to chec if the option is already checked(as e have done in case of Videos option)" DisplayName="Input Dialog - AskForRecurrence" sap:VirtualizedContainerService.HintSize="566.4,451.2" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Recurring Meeting?" OptionsString="Yes;No" Title="Do you want the meeting to be a recurring one?">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[RecurringChoice]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AskIfRecurringMeeting workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="AskIfRecurringMeeting.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_RecurringChoice">[RecurringChoice]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Another checkbox handling which asks user from options that are avilale for MeetingID." DisplayName="Input Dialog - MeetingIDSelection" sap:VirtualizedContainerService.HintSize="566.4,339.2" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="MeetingID Options" OptionsString="Generate Automatically;Personal Meeting ID" Title="How would you like to generate meeting ID?">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[InputMeetingID]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MeetingIDSelection workflow" sap:VirtualizedContainerService.HintSize="566.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="MeetingIDSelection.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InOutArgument x:TypeArguments="x:Boolean" x:Key="MeetingID">[MeetingID]</InOutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_InputMeetingID">[InputMeetingID]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+            <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Asks for Host Video option according to user requirement." DisplayName="Input Dialog - HostVideo" sap:VirtualizedContainerService.HintSize="608,339.2" sap2010:WorkflowViewState.IdRef="InputDialog_10" IsPassword="False" Label="Video: On/Off - Host" OptionsString="On;Off" Title="Please select video option for host!">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[HostVideo]</OutArgument>
+              </ui:InputDialog.Result>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InputDialog>
+            <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Asks for participants Video option according to user requirement." DisplayName="Input Dialog- ParticipantsVideo" sap:VirtualizedContainerService.HintSize="608,339.2" sap2010:WorkflowViewState.IdRef="InputDialog_11" IsPassword="False" Label="Video: On/Off - Partiipants" OptionsString="On;Off" Title="Pleae select video option for participants!">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[ParticipantsVideo]</OutArgument>
+              </ui:InputDialog.Result>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InputDialog>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Host&amp;Participants_VideoOptions workflow" sap:VirtualizedContainerService.HintSize="608,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Host&amp;Participants_VideoOptions.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InOutArgument x:TypeArguments="x:Boolean" x:Key="HostVideoBool">[HostVideoBool]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:Boolean" x:Key="ParticipantsVideoBool">[ParticipantsVideoBool]</InOutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="In_HostVideo">[HostVideo]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="In_ParticipantsVideo">[ParticipantsVideo]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <uix:NClick sap2010:Annotation.AnnotationText="Cicks &quot;Save&quot; button to store your meeting details via your google account(default one)." ClickType="Single" DisplayName="Click 'Save' button" sap:VirtualizedContainerService.HintSize="608,211.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="453, 815, 113, 40" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;ctrl name='Save' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Save' role='push button' automationid='' check:text='Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHUAAAAsCAYAAABbhfeDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALRSURBVHhe7ZyxbhNBEIZ5Akq6lHSUdFQWZTpK3gClQRQ0FGkokCKQkAUFElSWaNIhishpoogmBUVSRJFcQIeLkMSBXJw4GTy3O3s7e2OHKuws80l/4fPt+XTfze6e5fUNMIrDpBaISS2Qv5La3z2Dx6u/YfHtCO69PIKbT/Yt1xi85njtH338BatfT6E6v/RmZOZK3RtO4P5rk5hb7r44hK1v595Sm5lSe1unsPDsp3hQSx5Z/nwiVq0o9f2XSjyIJb/gsJjSkopd7q2nVqGasjk48/YcLak2hurLnecHrBtmUj/tjMVGlvzzZqPyFhOpOGWWGljyDz7yEEyqPYPqDT6pEEzq7eUDsYFFRwgmVdrRoieESS0ohEktKIRJLSiEMqlH0B36k41Y60n7/n8hFEk9hjV/nikm1YXQI7U39meZSJxuN6kuhH6pIVLXPIHuSvLe9nFo0+lP3LZhBR2/bWnbbSI03TCEHqkrFQz8edZEIlzk8RZgDEvT94NA/zref9B336SlQgktYgldE6WoWgNR5fE0Y3AtJdwUvnqvej09RpA88zPyCqFLKiWRS5XWVCPHVVpSmXQMX/Gz2taY1OtKNBvGix6JdpKTSp22icfQrq/C9g1B3bO+EKomSiTAhUsNUqiqojE4jIlRFzuoq7bpats3hdve6VdqJBOqpM4Cpc3rPoPUdDLFJlvzJ1rsXDINoaj7lb58iCqNScHt7e4XE8vnlZ8ew6NkPMUQisdUSxrCpBYUwqQWFMKkFhSCSbVlFrpDMKm48Eba2ZJ/cFUFwaQ+/KBn+m7hwZ/3EkyqLYzSG1wBRzCphyeX9ttfhcGuFxe2EUwqgqvGpYaWfPNqvalSpCUVsTU1eoKrFFNEqdgNP3g3Eg9iySco9Pv+hbfWIEol7C8C8gyOoWmXGzNXKvJjdFHPrOwZ9t8HFxfj3wHEkyKJK6Ua+jCpxQHwB7Ex/0jQxGjdAAAAAElFTkSuQmCC" InformativeScreenshot="198d150fc30bf3cb135027ca6322fba4.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick sap2010:Annotation.AnnotationText="After clicking &quot;Save&quot; button, steps can be added according to requirements. Here, taking user to Meetings page in the end to view his created meeting." ClickType="Single" DisplayName="Click 'Meetings' tab" sap:VirtualizedContainerService.HintSize="608,227.2" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="969, 43, 90, 55" ElementType="TabPage" FriendlyName="'Meetings'" FullSelectorArgument="&lt;ctrl name='Meetings' role='page tab' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Meetings' role='page tab' automationid='' check:text='Meetings' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAA7CAYAAADy6z2HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAO9SURBVHhe7ZnNTttAFEb7LvAGvEYeIK8RCSkS7GBRtUIKKFU3qIVKQGBJ0xaxISBAKlWBRSgg2sIiXXRBSoXEeupv7LE99o3zg8OdqHdxZJxvZpwcz9xMzLP7+wclPD0ingkRz4SIZ0LEMyHimRDxTIh4JkQ8EyKeCRHPxEiJv739oy4ufqpG4ygE53idau8yIyH++rql1tc/qqmpOTU5+VzNzr5Wc3Nv9BHneB052lH9XcR58bu7R6pcfqnm55fVwcGxuru7t3Kc43XkaLe398XKXcVp8ZjF5fILtbPzmcyToB3ab2x8InOXcFY8Zi4knp//SGWt1m9VqbzVx2SG9ujn+sx3UvzNza/MmX5ycq5rO45UbmY+xqFyF3BSPErFwsIymYFu4gH6u1xynBPfbt/pXcrh4QmZg17Eoz/GwXhUzo1z4s/Ovmup7fZfMge9iEd/tMF4VM6Nc+KxNZyZeUVmhl7EA4yD8aiMG+fEb23teXvyJTIzmFWxsrJJ5oZKZUmPR2XcOCd+f/9r1xkP1tbea/m1Wp3MAcbBeFTGjYM1/koLzarxhtXVzY7yoxp/lcpcwDnxeODVbVcTB+UGgk9P7XpvdjWuPkBzTjzw9/HvyIzi+PibJ9jeNso+fgDML1c8IKPybvgP1uSX60AYedSzmizMs5pBb9pT4ax4UKt90BIbjf6eTqIflbuE0+JBv8/jXZ/pBufFA/kPFDPyP1fh0Yh4JkQ8EyKeCRHPhIhnIlfx9dKEGh+fVnUi89lWpfEJVaheEtkjqU971y6qapPIHCR38WNjncU2q8XMvC8gurRNZyNA7uJLJU9IYVE1Uzlme9HLiyLeI3/x9UtVLeBoZ5jtEIWjLd4vP1gJwO5HZ2bl2K+jrSlzeA8oO1H/dAlMjF1dVIXYhIlfI7t8DsYQxHt/YzZas96I8D9QJN6/SdE5ZJg6nZV5pGZ8UrwtTH//hO2TYwftzXtuejchLru+PSLigw8Szt7YjbDEp26QP4bOszKcdxWf+KKFzE5iyTzRP2eGJD4qLcmbkBRvlnMcI75jFvQdWDxxU63cnAelKJxAOTI08WFpqNofstuMD8nKQN7iO14P4+Yvf4jifcnJGWOJDz5UdB4nK/N4jPjU2P6qDMV7Y0fv2V6xeTFU8f5ytWupLR74EkwpsXcQvWX+NfsRH5wH/fUPr3osj2U6t25wPuQqfqRJraDhIuI1/urJu5xk8Z+K9+u2KSXgKaUDmfFMiHgmRDwTIp4JEc+EiGdCxDMh4ll4UP8A1HJRX74zHvYAAAAASUVORK5CYII=" InformativeScreenshot="71a2e427e7d4d17714803629e4b81e6c.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPPTMainFrmWndClassEx' title='Zoom' /&gt;" SearchSteps="Selector, FuzzySelector">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target DesignTimeRectangle="879, 43, 90, 55" ElementType="TabPage" FriendlyName="'Chat'" FullSelectorArgument="&lt;ctrl name='Chat' role='page tab' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Chat' role='page tab' automationid='' check:text='Chat' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAA7CAYAAADy6z2HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKTSURBVHhe7ZjdShthEIZ7L+4d9Db2AryNgHjgnooJkoiwpCkVoUgp6EnAhYoRKmgRQiFQloI5KkRog2iqaT2e7nz5cX++dLdYOpP0PXggZHbegyfzze7m2XD4QODfA/FCQLwQEC8ExAsB8UJAvBAQLwTECwHxQkC8EBAvBMQLAfFCqBV/f/+TwrBLp6ftP4b7uN+WqwWV4q+vB7S9/ZpWVspULjeoWt0tDF/PfdzPObZ8DagUf3BwRBsbL+jqqm+t59HrfTP9nGOra0Cl+M3NV9RqnVtrReF+zrHVNKBS/Pp6nc7OPlprReF+zrHVNADxQkC8EBAvBMQLAfFCqBRfq+3S4eF7a60o3M85tpoGVIo/OflAa2tVurjoULf7JVPv92/M97PgPu7nnHSvFlSKv7v7Qc1my7z6M5XKSxoMhub/l/39d7S6WpnWZsH9nGPL14BK8XE6nc9GZK/3lfb2muR5NWq3P1knfYItRxvqxbNwFt9ovDXS50VsHnMj3vO2FkY6o1787e13qtffLJR0Rr34RQXihYB4ISBeCIgXAuKFgHghVIkP/WVaWno+xXF3KDS1S/LdZfLDbM+8okT8MZWcuOgxgUelgD8/UXyU45SO7TUhVIgPSpH034qB+L9PuEOukyd1In50MswacjwK4tdEcqcrKpaXXl+jEySPvHiexvSKycDik7LTpyTwYxnpTEy8hcLiU6eCT8rMPj4ZsRMB8RbMqkmtjQwFxJucx5WSWEUQb2O0Rlz/0lKbkCOexSZ+PEx8McbTmpETCZv5OJkWH5t+vqFi4gszmvz4E8ijrLxVk+x1oxttYuLH7wlcw1PNfw7ECwHxQkC8EBAvBMQLAfFCQLwQEC8ExAsB8SI80C8p9jiR0mlqrwAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                      <uix:Target DesignTimeRectangle="1059, 43, 90, 55" ElementType="TabPage" FriendlyName="'Contacts'" FullSelectorArgument="&lt;ctrl idx='1' name='Contacts' role='page tab' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='' name='Contacts' role='page tab' check:text='Contacts' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAA7CAYAAADy6z2HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPZSURBVHhe7ZrLTttAFIb7LuQN+hp5AF4jEixQkIAVSJAI8KbiIjUsUFWhVmCBQOJSumihC9SSDSwQCyoEFCjQsj71P47NeHKcxGB3THsWn8zMmTm2P48n9pgXd3f3JPx9RLwlRLwlRLwlRLwlRLwlRLwlRLwlRLwlRLwlRLwlciv+9PQH7e5+o62tXcXi4gbNz7uxIB60RT/05/LmhVyKPz7+ToODE1QuV2hsbDYx5XKVhoYmVR4ufx7InfiLi2slbW7uPd3e/mbbtAP90B95kI9rY5vcicc00d9foZubX2y8UyAfeZCPi9smd+JXVz9SpTLLxsDZ2SW57ibNzLxVW5S5dgB5kI+L2SZ34peXP9DExGs2hmljdHSKRkZeeT+oS2qLctx0gjwrKyK+I5aWNslxamxse/uLN287dHX1U5WxRRn1ZluAPLgruJhtnpX4hYVVmpp6E6lDGfV6XQDyIB8Xs82zEr+z81U9Kh4dnagytiij3mwLRHwCWonHk06t9o56e4fV8zq2KMc9AYn4BLQSH7C/f6DeULHl4gEiPgGdiD85OaPDw2O15eIBIj4BceIhGW+jPT3DTaCeuwgiPgGceH8ZwaHx8de0t3cQ+XFFGfWIm8/zIj4BnPj19U80MDBOl5f+87sJ6hHf2PgcqRfxCeDeXOv1Q+rrG21aCtZBHO30fsiDfHpdXsid+Li1GrydTk7WmpaAAeq5t1dZq0mAvzpZffSScIC/OlmV1clOOT+/Vh9B0liPRx7k49rYJnfiwcMXqCo7tbQD/dBfvkA9AvObaxLQT765Ciwi3hIi3hIi3hIi3hIi3hKZiq873dTV9TKkUJymOtPufyQj8WtUKjCi3TKVXK38FLxchdIaH0tCWnkSkol4t+RJz/pkRLxBfZqKhW5y6kwswgE5xbhpCDHk8O8cFS+UyW3EzSksvIs8iUFdoekYjP15+ZyYPHp+fb9pkr54jKC2c7kvQR9pONmHfo24dtJNdxEzUl1H22/kOLj9Tfu5zTxq4Giy3bV/SLx5copglJt/N0AfPS8jPgrulsY+0DZu5LLiO7ljn0ZGU03MSQawFycF8Wrf0ekkFB83GNrkSe1hwCCDH1f/ti46Lf7nBSeb9ohvymmM+CTiQ/zfmCzkZyDeozFimk7IO0n/JPyLo8fVHB+WHylei6t84YXwBeqDIXaOD48R+Mf5fMQr/IMObnt160cuxMMTi4pFRmQH4rX++sUM8hU9seGIN9pH92fk0aYZ1S5yzOmRoXihFSLeEiLeEiLeEiLeEiLeEiLeEiLeEiLeEiLeEiLeCvf0By4xVucsgbQdAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="474, 92, 1218, 872" Arguments="Zoom" FilePath="C:\Users\bhall\AppData\Roaming\Zoom\bin\zoom.exe" IconBase64="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" InformativeScreenshot="5fcdd469b614caf2fa65b5ecbc6468b9.png" Selector="&lt;wnd app='zoom.exe' cls='ZPPTMainFrmWndClassEx' title='Zoom'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

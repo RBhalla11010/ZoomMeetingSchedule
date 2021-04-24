@@ -1,0 +1,186 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Host_Participants_VideoOptions" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="HostVideoBool" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="ParticipantsVideoBool" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="In_HostVideo" Type="InArgument(x:String)" />
+    <x:Property Name="In_ParticipantsVideo" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>920,1818.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Schedule meeting" sap:VirtualizedContainerService.HintSize="930.4,1753.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="896.8,1462.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute 'HostVideo: Off'" sap:VirtualizedContainerService.HintSize="855.2,135.2" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+            <ui:GetAttribute.Result>
+              <OutArgument x:TypeArguments="x:Boolean">[HostVideoBool]</OutArgument>
+            </ui:GetAttribute.Result>
+            <ui:GetAttribute.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3cbc5dba-16c2-4790-af87-eb8e0f8fde0f" InformativeScreenshot="d78cc7f869d59f2dd9bb7df6b08ca0c5" Selector="&lt;ctrl name='VideoHost: On' role='radio button' /&gt;&lt;nav up='1' /&gt;&lt;ctrl name='VideoHost: Off' role='radio button' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetAttribute.Target>
+          </ui:GetAttribute>
+          <If Condition="[In_HostVideo.Equals(&quot;Off&quot;) and HostVideoBool=True]" sap:VirtualizedContainerService.HintSize="855.2,488.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Else>
+              <If Condition="[In_HostVideo.Equals(&quot;Off&quot;) and HostVideoBool=False]" sap:VirtualizedContainerService.HintSize="711.2,328" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Then>
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'VideoHost: Off'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NCheck_1">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="141, 630, 61, 38" ElementType="RadioButton" FriendlyName="'VideoHost: Off'" FullSelectorArgument="&lt;ctrl name='VideoHost: Off' role='radio button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='VideoHost: Off' role='radio button' automationid='' check:fulltext='VideoHost: Off' /&gt;" InformativeScreenshot="b73d7343a6113d2dffe72f0347c2aa62.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="82, 630, 59, 38" ElementType="RadioButton" FriendlyName="'VideoHost: On'" FullSelectorArgument="&lt;ctrl name='VideoHost: On' role='radio button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='VideoHost: On' role='radio button' automationid='' check:fulltext='VideoHost: On' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAqCAYAAAAERIP3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJMSURBVGhD7ZhPSsNAFIc9gRfwFvYCeo1sxQu4c5WlS0EFzUYL/gFbNKLiVmMVbVV0oyi0SndCqyBUBGl99jeZ0EzTtM00UOPMB8Fm3szDL3kzmWSEFEbLq4qWVxUtrypaXlW0fBj1ep2KxWc6P78k2z4gy1plB36jDTH0SSqh8tXqG21uZmlhYYW2t3fo+PiU7u8f2YHfaEMMfdA3iQTkG40GFQo3TGx//4hqtRqPBEEMfdAXYzA2SQTkIbG0ZNHDwyNv6Q36YszV1Q1vSQaCfKVSbd7F5UjiHhiDsciRBJ5ev1vyWLi2trKsjGXBWOT464tgvfFDk/PvLflS6YUWF63mPP7kLdHBWORALhkcM0WplO8w0lTmsTix775odKbSkr+4KLAVfFCQA7mi4ZDZQda9GGYzGi/TGx+i/N7eIZ2c5PiZPMiBfUAUmGTIXWYxM1798bk3Ud6y1qQWunaQA7n6x73roX7lNBkpg9LsypQpbaCv+9edHl6sf8ZmK39E3jF7lLb/4njSLeFuVRNGQB6l6jhn/Ewe5IhU9hLyhv9Ws8qIti4Eyh579WzW5mfyZDI2y9U3EvLCFBGmRX9MrbcteEN71PX65zvOeRZxkZDfvW171LmbnMxQNjndVnQxFo88NjkT/k0OGN72lj/n2y4AExemRDzyQNjeegzyYoOx8rhiwg4vUA3xyYOAPF5L8/lrdhdRxt3WAMTQB30xJvGvtB4oX/FjRu7/f8zwg4WrWCyp9xlLBbS8qmh5VdHyqqLlVUXLq4rC8kS/jW801kup/CMAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                </If.Then>
+                <If.Else>
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'VideoHost: On'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NCheck_2">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="82, 630, 59, 38" ElementType="RadioButton" FriendlyName="'VideoHost: On'" FullSelectorArgument="&lt;ctrl name='VideoHost: On' role='radio button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='VideoHost: On' role='radio button' automationid='' check:fulltext='VideoHost: On' /&gt;" InformativeScreenshot="f9356bf62cda30bb74e17ed8d1752c4f.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="43, 630, 34, 38" ElementType="Text" FriendlyName="'Host'" FullSelectorArgument="&lt;ctrl name='Host:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Host:' role='text' automationid='' check:text='Host:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAqCAYAAADf/ynVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADuSURBVFhH7ZONDYQgDEaZi4GYh2lYhmF6tvYEK/dTE6J3+V5iYlNoH0UD3RSIeYGYF4h5gZgXiHmBmBeIefkNsZojhVQ02lNSoJirRvO5RqwkCjHTu2r/KSbrQ2iP3csCWz4Sb+c6hz01U9T8k9Niq1SitrpSjtpIQtOs5O7dTOwrsf405mlihZIpJEgDle3fLdOuUq5o1LQX1gkuBzqUvFZMkcmxYLd+mtjgmxBeXt86vd3BZv2VHI8+/r55K7XmtthOfHDQ02KMrB/+HAvbFQ5yKio57vdJ7E5AzAvEvEDMC8S8QMwLxLxAzAfRA+GjzTRNiygUAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                </If.Else>
+              </If>
+            </If.Else>
+          </If>
+          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute 'Participant Video: Off'" sap:VirtualizedContainerService.HintSize="855.2,135.2" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+            <ui:GetAttribute.Result>
+              <OutArgument x:TypeArguments="x:Boolean">[ParticipantsVideoBool]</OutArgument>
+            </ui:GetAttribute.Result>
+            <ui:GetAttribute.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c67152c3-c746-467e-9a11-758edbc1749b" InformativeScreenshot="b745c91cb619c0a307561a9a33474010" Selector="&lt;ctrl name='VideoParticipants: On' role='radio button' /&gt;&lt;nav up='1' /&gt;&lt;ctrl name='VideoParticipants: Off' role='radio button' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetAttribute.Target>
+          </ui:GetAttribute>
+          <If Condition="[In_ParticipantsVideo.Equals(&quot;Off&quot;) and ParticipantsVideoBool=True]" sap:VirtualizedContainerService.HintSize="855.2,488.8" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Else>
+              <If Condition="[In_ParticipantsVideo.Equals(&quot;Off&quot;) and ParticipantsVideoBool=False]" sap:VirtualizedContainerService.HintSize="711.2,328" sap2010:WorkflowViewState.IdRef="If_4">
+                <If.Then>
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'VideoParticipants: Off'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NCheck_3">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="480, 630, 61, 38" ElementType="RadioButton" FriendlyName="'VideoParticipants: Off'" FullSelectorArgument="&lt;ctrl name='VideoParticipants: Off' role='radio button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='VideoParticipants: Off' role='radio button' automationid='' check:fulltext='VideoParticipants: Off' /&gt;" InformativeScreenshot="769808c90ae6f10e657002ae55e86442.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="421, 630, 59, 38" ElementType="RadioButton" FriendlyName="'VideoParticipants: On'" FullSelectorArgument="&lt;ctrl name='VideoParticipants: On' role='radio button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='VideoParticipants: On' role='radio button' automationid='' check:fulltext='VideoParticipants: On' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAqCAYAAAAERIP3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJMSURBVGhD7ZhPSsNAFIc9gRfwFvYCeo1sxQu4c5WlS0EFzUYL/gFbNKLiVmMVbVV0oyi0SndCqyBUBGl99jeZ0EzTtM00UOPMB8Fm3szDL3kzmWSEFEbLq4qWVxUtrypaXlW0fBj1ep2KxWc6P78k2z4gy1plB36jDTH0SSqh8tXqG21uZmlhYYW2t3fo+PiU7u8f2YHfaEMMfdA3iQTkG40GFQo3TGx//4hqtRqPBEEMfdAXYzA2SQTkIbG0ZNHDwyNv6Q36YszV1Q1vSQaCfKVSbd7F5UjiHhiDsciRBJ5ev1vyWLi2trKsjGXBWOT464tgvfFDk/PvLflS6YUWF63mPP7kLdHBWORALhkcM0WplO8w0lTmsTix775odKbSkr+4KLAVfFCQA7mi4ZDZQda9GGYzGi/TGx+i/N7eIZ2c5PiZPMiBfUAUmGTIXWYxM1798bk3Ud6y1qQWunaQA7n6x73roX7lNBkpg9LsypQpbaCv+9edHl6sf8ZmK39E3jF7lLb/4njSLeFuVRNGQB6l6jhn/Ewe5IhU9hLyhv9Ws8qIti4Eyh579WzW5mfyZDI2y9U3EvLCFBGmRX9MrbcteEN71PX65zvOeRZxkZDfvW171LmbnMxQNjndVnQxFo88NjkT/k0OGN72lj/n2y4AExemRDzyQNjeegzyYoOx8rhiwg4vUA3xyYOAPF5L8/lrdhdRxt3WAMTQB30xJvGvtB4oX/FjRu7/f8zwg4WrWCyp9xlLBbS8qmh5VdHyqqLlVUXLq4rC8kS/jW801kup/CMAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                </If.Then>
+                <If.Else>
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'VideoParticipants: On'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NCheck_4">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="421, 630, 59, 38" ElementType="RadioButton" FriendlyName="'VideoParticipants: On'" FullSelectorArgument="&lt;ctrl name='VideoParticipants: On' role='radio button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='VideoParticipants: On' role='radio button' automationid='' check:fulltext='VideoParticipants: On' /&gt;" InformativeScreenshot="298f302b9d7025c81d97915ba433df0a.png" ScopeSelectorArgument="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting' /&gt;" SearchSteps="Selector, FuzzySelector">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="337, 630, 79, 38" ElementType="Text" FriendlyName="'Participants'" FullSelectorArgument="&lt;ctrl name='Participants:' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Participants:' role='text' automationid='' check:text='Participants:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAqCAYAAADPn2cJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIFSURBVGhD7ZWLbcQgEERdFwVRD9W4GRdD+B7Lgr83URxpnoQS2wuMH+BbPIFBmUAoEwhlAqFMIJQJhDKBUCYQygRCmUAoEwhlAqFMIJQJhDKBUCaQTuZqF78sshnvtvIQRJ7D+rVcH3Gn9g0MMo2wtznzndDV+sU4D16P3+WLzIcyg07vjL53A8rckbk5b+QnoJsw19l19TY9t96mIyqazYd1nKOegFZbSofaet3V6xe/lDP/zTXt5MXxP/1ia0HE/VKf5ulP7SWZcczNWdGxhKmTlWtjZE1gssp6jixGfBdDSHcgM75Qu6dzxO7nOQeBMqPOrKWtIV/8/67MHH7nB6CbtMiUI0dOZeadLFx0TPPo4slLdZzlTP3FO05lXvsRHGS27RyaEqGPow45SDmTGZ8fBJ3J7EQk4oL0Mm/lHHaezlx38/6iV06OeaV8C+UkkxX/e5kPcp7KLKS6KHU/7zWZk62eVv9bmfpFFDOZwzGXC/Ik51WZidx/6ihwQ6aYMF3LHXAgU73cVJCsCWOf/QC1efJO/NQ8yan76MzhutWL/rpf4OIxj33FdyiG61ZwR2a5n/qUh7M5qqTcWsCZTBNMf8YU41Zu5xykqMx1QUrbXbhAJ/PtHC32G6BMIJQJ5F/JfDuUCYQygVAmEMoEQplAKBMIZQKhTCCUCYQygVAmDO9/AEiUqVwc8R3bAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                </If.Else>
+              </If>
+            </If.Else>
+          </If>
+        </Sequence>
+      </ActivityAction>
+    </uix:NApplicationCard.Body>
+    <uix:NApplicationCard.TargetApp>
+      <uix:TargetApp Area="596, 28, 729, 881" FilePath="C:\Users\bhall\AppData\Roaming\Zoom\bin\zoom.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAduSURBVFhH1ZhrbFTHFcfHOCJKMQqNkWgSXERUqXWR4g92Qoy9u6x3jb2210DsXZkqtOoLp21ezZe0EuLhB+7aGBIXk8UhAWySVk2qtEbpF6jab6BKLab9EAmU7StVHisUsJ34eu/MUf/n3hnv9XptbJBi5Uh/zZ0zZ/7nd2ev77KIL3x8ae3Ggi9vrCiCSr4WbC/91hl6LP66CrecomjrMLXEhikeO6vaWkdol1exs9TGa1zDtfGzFOa97MFe7Mneus3S4+5V68RDW54sDuy9FEGjRPx1Oh8foauxM5SODasJ5CxcZyAZO6MgHvOKa7h2AkqzB3sBPBHYezHyUKi9+O4163TXRUZBQaGo/MloWewVSsZGKAUYGyI0oFbW6VypPNfenBb2sgdukABox0ZUCkpWPz9aVrCiUHdfRIQ7r/hhNAaoqZZTiuaKPMrNe+de5VtjWJqKD9NYuOtKQLefPwpW3CXCB/7ux52Ot+AEHn/Vo9dy5l7xWu66yeXLe+eQc9royb2ZIW+sXP0VseXp0bKW0zTGcDtzTFiLzeVqMfucEz1NV8DwMLPMia/6nrxvx0lKonBq50kYLIMeR+8deO7BUqyx3LineGOB7+eXIjj+1I5XFC2bGPI1SjELM2k8Ie7dUFGE00ugwJ61YUjLXHvHfJpvzesz39xcv0r2jiHZe++G8iKNJ8SaDeUlWLwASNp+QlEzxKMRz428udzrhWq86yafO2cxA7Os2VBRovGEWB/4bun2IXVt+xBRcxIbllPMAJb1gfZSjSdE3VB6MxbT0RNEURRFX4Z41NeNxxU1DC5NvGeWj1fIN3jXX5Yz+eYkGE6odN2QtVnjCREdyoSxOOlsmBE2YWyCnntTUf8FRUf/uLCOQIdR1/mOovY33L1N2sd4MnwbXivPwnPnCUlNDqi3xtEkM2k8IXC3zUhaURTzhqbjvFFSBGY//rWk99KKJi0jusWoaPwzRe9/omjwz3ySrhf71h+T9L1hSX/9t6J/XVf0wtvcw6xn65il8Tg1azwhmgZVa+OgyjSieEYwq/+lpM4/SLrxGd1WWBmifecUbYMPez7/pqSrHxEpRY4ne3MP0y/bX2Wix6lV4wkRGbDjjceU5KIGj+oGAPjO7QNy/OWfODlA7BuVlEoDTucdQHhzD29PB/SYspsGZVzjCdEwMN3WAECnCGZGdS/dOeB/rxPtPiXpH+8bNDdmANHD29MFBQuYNB5O8Nj0rsiAUhEURHBHRrUvSuq4Q8APbxA9g+f4k091Qgd7sjf38PZ0BRYwabwsYL0uMGPtUQCeuzPAj24SPfebuR4OILy5hwHjvm5vAB7xANZjUv+Sknzcdbgjo/ARSQfw7NzIufulxMfjRM/iBOcAwpO9uYe3Zz0YwKKYSeMJsQ0TLEqnCHdkxlA/Hu7fz/14lhIM+NQb8JjUCR0GMHTEdnuavm5vxUwaT4ja/um2bUelhMirUL9NL7wl6frk7Ad8KcGAu09KGvtPzh8JAPfj5rmH28+MjiQzaTx81R214pzchuOuxR2ZkTd//7SkD27eAeAEvlvxx/cz3Og1/Q7kmAE8bDu9TF9Xth3ut7KvmdBhq7W2X2ZqGQxQRmE9/u5v0nW9jWDApgHcLEB+NCLp3f8p90WtAWv6sv1cOQyZOjBpPPxI6rWaw/3KCh/GQwsjr9ig4UWbzl3GRz2h6Ca+xsanFE0sQlz7p3ddCPba2mvTrqRNl95TlPoY3/G/simo17JiBmmFElPZr7qavukwkpMhLIawIVdBGIcx/vCUTXt/i5c3Hu4uvCJupX34rm0ZdCGM19aETVGc6A/gVcePkWfNkQs4GUx8mv3HQqDb2oxkOtSnqAYwRiEtM9/6C5v8UECPRjz3yrsWBJDx8HoFkDfX3jVmAGQ61G89qvGEuP+RPaWhPnltBpA355NZyx3zidcWWp9HoV4AguXByj3f0HhCrF5fXlLTJy/UAJDveDlVA0A8sxeYSeMB8IHyopoe2RtMKDvYg49yOZWQNgATAMz+aLpnzcaCze0XI8GETDFg4JCWuXbGjCM24bkzco6vPTVmfUYmZ2p6ZvuwzH7OATD16E8vzv7ZyfFgZft9wV6ZBOSU05g3OTLXrvFceetyc958vhrvPIOPWE4xA7NorGysXL1ObPrO6MP+HjkW6FHk7858rnJ69sgrm749WsYs+WNFoSh/+rIfxeP+bkm+Lmz+PIRe3JN7M8Mto/ypy35ftz3mPySnfJ0Zqp5H861xfqF9Rs4BoAcAx9Dz1v/9NhMFheLrT7xdVtklk75ularutG1fl03VrE5WTrOOBTSrVnu4PrbvkEpVdk0mv/nEW2Xcc0lRuGqdWFvRXrxpz8VIdadM+Lrk+eouebWqQ6arDmYmqjpsC2MGklUdEI9eZXMZp7bDxh6ZZg/o/JZOlWDvtY/sLi5ctVZ3vY1YiVdQEd6TUMn9Fe2l/v3WY76D0+HqDitatd9qqTw4HQdMW+X+6V1eca6a1w5YLVzr68iEeS97sNeqByqK2Fu3+aKGEP8HP3cchmFJe2wAAAAASUVORK5CYII=" InformativeScreenshot="778d78fd1ce4e98c25bf2b63a89fbb58.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='zoom.exe' cls='ZPWndSchedulerClass' title='Schedule meeting'/&gt;" />
+    </uix:NApplicationCard.TargetApp>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </uix:NApplicationCard>
+</Activity>
